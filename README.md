@@ -14,5 +14,8 @@ The upstream-averaged erosion rate is calculated by integrating the eroded mass 
 This code package implemented the method published in *__Wang and Willett 2021__* (https://doi.org/10.5194/esurf-9-1301-2021). 
 
 ## Derivatives of this model
-This model is initially published in accompany with a research paper that is recently submitted to GRL for peer-review. If you want to develop further upon this model, please contact the author: Yanyan Wang through email: wangyanyan0607@hotmail.com, or yanyan.wang@eaps.etha.ch -----July 1st, 2025
+This model is initially published in accompany with a research paper that is recently submitted to GRL for peer-review. If you want to develop further upon this model, please cite: Yanyan Wang. (2025). yanyanwangesd/DAC-horizontal-flux: v1.0 (DAC-horizontal_flux). Zenodo. https://doi.org/10.5281/zenodo.15783514
+
+## contact the author
+Yanyan Wang through email: wangyanyan0607@hotmail.com, or yanyan.wang@eaps.etha.ch -----July 1st, 2025
 

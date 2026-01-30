@@ -181,7 +181,7 @@ if ((params%istep/params%freq)*params%freq.eq.params%istep) then
       do i = 1, geometry%nnode
           erodeit(i) = zinit(i)-geometry%z(i)
       enddo
-    call VTK_debug(geometry,delaunay,params,network,stack,erodeit, 'deposition', step)
+    call VTK_debug(geometry,delaunay,params,network,stack,erodeit, 'deposition', params%istep)
 endif
 ! write lake fill info to vtk, ---Feb 27,2025 YW 
 

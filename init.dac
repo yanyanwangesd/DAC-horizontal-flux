@@ -34,20 +34,20 @@
 / 1. GEOMETRY ----------------------------------------------------------------
 
 /xl - spatial extent of domain [m]
-80000.d0
+50.d3
 
 /yl - spatial extent of domain [m]
-120000.d0
+50.d3
 
 
 /mesh and its parameters----------
 
 /nx,ny  - node numbers for initial grid spacing
 /nx:
-65
+50
 
 /ny:
-97
+50
 
 /zl - maximum height of initial landscape [m]
 1.0d0
@@ -81,11 +81,11 @@
 /left boundary
 0
 /right boundary
-1
+0
 /front boundary
-2
+0
 /back boundary
-2
+0
 
 
 
@@ -105,7 +105,7 @@
 4.5d6
 
 /freq  -  frequency, plot every "freq"-th timestep; you will have tfinal/dt/freq outputs
-25
+100
 
 /istep - time step counter (should always be set to 0)
 0
@@ -116,7 +116,7 @@
 / 3. CHANNEL AND HILLSLOPE PARAMETERS ----------------------------------------
 
 /k_scalar1   -  erodibility constant
-1.0d-5
+4.0d-5
 
 /streams -----
 /Stream power, Hack's law -----
@@ -124,7 +124,7 @@
 1
 
 /m  -  area (or discharge) exponent in fluvial incision law
-0.495d0
+0.3d0
 
 /h  -  Hack's exponent
 2.0d0
@@ -137,7 +137,7 @@
 /note that xc  -  hillslope length (in the vicinity of divides) has already been set
 
 /tanthetac  -  tangent of hillslope slope limit - usually set to 0.3839d0 (21 degrees or where fluvial transitions to debris flows?)
-0.2679d0
+0.3839d0
 
 
 /diffusivity  -  diffusivity for hilltops - normal values are 5e-3 - 0.01
@@ -162,7 +162,7 @@
 
 /uplift and advection parameters -----
 /uplift_scalar1  -  uplift rate as constant in interior [m/a] - with d-3 can think of it as mm/yr,geometry%w
-1.d-3
+5.99d-4
 
 /uplift_scalar2 -  uplift rate on boundary (used only for channel head calc), [m/yr]
 1.0d-6
@@ -221,16 +221,16 @@
 
 /input/output ----------------
 /read_restart 		      - flag to read GeoFile to restart run from the end of previous run
-1
+0
 
 /num_restart            - which GeoFile to read
-115
+0
 
 /ascii                  - flag to output ASCII data of the run (used for post-processing)
 1
 
 /vtk_fine               - whether to output the full triangulation involving the divides. Large output files.
-1
+0
 
 
 
@@ -244,7 +244,23 @@
 1
 
 /f_num_sets             - how many times something is set as function of ... arbitrary combinations possible
-2
+1
+
+//---------------- block 1
+/f_depends_on  - choice:  x,y,z
+x
+/f_variable_determined  - choice:  u,v,w, p,k (u=advection in x direction, v=advection in y direction, w=uplift)
+w
+/superposition  0 - overwrite, 1 - add, 2 - multiply
+0
+/time bounds [a], if any -  write 0, 0 for eternity; e.g. 0, 1.d6 makes condition only valid for first 1 Ma1
+0, 0
+/number of segments to follow - not determined automatically
+1
+/polynomial lines, matching number above
+0, 50.d3, 0, 5.99d-4
+//---------------- block 1
+
 
 //---------------- block 1
 /f_depends_on  - choice:  x,y,z
